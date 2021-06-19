@@ -67,6 +67,9 @@ export default {
       }
     };
   },
+  created: function(){
+    this.fetchData();
+  },
   //負責管理頁面上的 fun
   methods:{
     fetchData(){
@@ -77,7 +80,8 @@ export default {
           .get('http://localhost:3000/contact')   //放 api 的網址
           .then(function (response) {
             // handle success
-            console.log(response);
+            console.log("response", response);
+
             self.tableData = response.data;
           })
           .catch(function (error) {
@@ -129,6 +133,7 @@ export default {
           });
       await this.fetchData();
     },
+
     async saveItem(){
       if(this.editData.id){
         console.log(this.editData.id);
@@ -152,7 +157,7 @@ export default {
       }else {
         //先產生一個 id
         this.editData.id = this.tableData.length + 1;
-        // console.log("editData", this.editData);
+        console.log("editData", this.editData);
         //fun 裡面沒有 this
         let self = this;
         //呼叫 api

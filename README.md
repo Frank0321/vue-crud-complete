@@ -120,9 +120,13 @@
 
   ---
 
-  ### Read 資料說明 :
+  
 
-  在 Contact 使用 Table 這一個 component ，並將資料由 Contact 傳至 Table 進行顯示 (父 - > 子，props)
+### Read 資料說明 :
+
+  在 Contact 使用 Table 這一個 component ，並將資料由 Contact 傳至 Table 進行顯示
+
+- 父元件的功能 - > 子元件的功能 (props)
 
   - Table 顯示的部分 :
 
@@ -261,7 +265,10 @@
 
 ### Create 資料操作說明 :
 
-在 Contact 使用 Modal 這一個 components，顯示在 Contact 畫面上，但關閉視窗的功能 (在 Modal 上) 要在 Contact 上進行關閉 (子的功能傳到父的介面去操作 ，$emit)
+在 Contact 使用 Modal 這一個 components，顯示在 Contact 畫面上，但關閉視窗的功能 (在 Modal 上) 要在 Contact 上進行關閉 
+
+- 子元件的功能 - > 父元件去操作 ($emit)
+- 新增資料 : 父元件的功能
 
 - Modal 的 close :
 
@@ -345,10 +352,14 @@
 
 ### Update 資料說明 :
 
-   
+  在 Contact 使用 table 這一個 components，使用裡面的  edit-btn，並呼叫 Modal，將值帶進去，編輯完再儲存
 
   
 
+
+
 ### delete 資料說明 :
+
+在 Contact 使用 table 這一個 components，使用裡面的 delete-btn ，並更新畫面上的資訊  (table 內的 delete，表示子元件的功能傳到父元件使用，子 -> 父，$emit)
 
   
