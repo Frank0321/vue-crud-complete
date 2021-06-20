@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Contact from '../views/Contact'
+import LifetimeEx from "../views/LifetimeEx";
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/lifetime',
+    name: 'lifetime',
+    component: LifetimeEx
   },
   {
     path: '/about',
