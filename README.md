@@ -30,7 +30,7 @@
 
   - Create a `db.json` file with some data
 
-    ```\
+    ```json
     {
       "contact": [
         {
@@ -67,7 +67,7 @@
 
   - Performing a `GET` request
 
-    ```
+    ```js
     // Make a request for a user with a given ID
     axios.get('/user?ID=12345')
       .then(function (response) {
@@ -130,7 +130,7 @@
 
   - Table 顯示的部分 :
 
-    ```
+    ```vue
     <!-- 需要設定好 key -->
     <tr v-for="(item, index) in tableData" :key="index">
       <td>{{ index+1 }}</td>
@@ -146,7 +146,7 @@
 
   - Table 資料的部分 :
 
-    ```
+    ```vue
     //從外面傳進來 父->子
       props:{
         tableData:{
@@ -166,7 +166,7 @@
 
   - Contact 使用 Table 物件的部分
 
-    ```
+    ```vue
     <Table v-bind:tableData="tableData"/>
     ```
 
@@ -174,7 +174,7 @@
     - 利用 v-bind 透過 props 把資料傳進去 table
     - v-bind : tableData，可以用 : tableData 代替，如下 : 
     
-    ```
+    ```vue
     <Table :table-data="tableData" />
     ```
     
@@ -184,7 +184,7 @@
 
     需要一個 components 裝起來
 
-    ```
+    ```vue
     components: { Header, Modal, Table }
     ```
 
@@ -198,7 +198,7 @@
 
 - Contact 匯入資料 db.json 的資料
 
-  ```
+  ```js
   fetchData(){
       let self = this;
       axios
@@ -225,7 +225,7 @@
 
   - 內層 function 無法使用到 this 物件，需要先定義 
 
-    ```
+    ```js
     let self = this
     ```
 
@@ -239,7 +239,7 @@
 
   - 因此會把 fetchData() 在 mounted 內進行呼叫
 
-    ```
+    ```vue
     mounted() {
         this.fetchData();
         },
@@ -249,7 +249,7 @@
 
 - Table 新增 computed 計算總共筆數
 
-  ```
+  ```vue
   computed:{
     totalLength (){
       let length = this.tableData.length;

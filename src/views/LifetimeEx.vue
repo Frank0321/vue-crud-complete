@@ -1,15 +1,23 @@
 <template>
-  <liftetimecomponent ></liftetimecomponent>
+  <div>
+    <h1> Hello, This LifeCycle</h1>
+    <button @click="updateEvent">updatebtn</button>
+    <h2> {{a}}</h2>
+  </div>
 </template>
 
 <script>
-import Liftetimecomponent from "../components/liftetimecomponent";
 export default {
   name: "LifetimeEx",
-  components: {Liftetimecomponent},
+
   data () {
     return {
       a: 1
+    }
+  },
+  methods: {
+    updateEvent: function (){
+      this.a += 1;
     }
   },
   beforeCreate() {
@@ -26,7 +34,7 @@ export default {
   },
   beforeMount() {
     console.log('Hook: beforeMount');
-    console.log(this.$el.outerHTML);
+    console.log(this.$el);
     console.log();
   },
   mounted() {
