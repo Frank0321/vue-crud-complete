@@ -64,7 +64,13 @@ export default {
       editData:{
         name:"",
         phone:""
-      }
+      },
+      mockdata:[
+        {
+          name:"default",
+          phone:"default"
+        }
+      ]
     };
   },
   created: function(){
@@ -86,7 +92,9 @@ export default {
           })
           .catch(function (error) {
             // handle error
+            console.log("not connect to db service, please open json service");
             console.log(error);
+            self.tableData = self.mockdata;
           })
           .then(function () {
             // always executed
