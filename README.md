@@ -120,7 +120,7 @@
 
   ---
 ### 成品圖
-
+![](https://github.com/Frank0321/vue-crud-complete/blob/master/ref/pic/finish.png)
   
 
 ### Read 資料說明 :
